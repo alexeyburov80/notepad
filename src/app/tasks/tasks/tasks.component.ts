@@ -1,6 +1,8 @@
-import {Component, Inject, OnInit, ViewChild} from '@angular/core';
+import {Component, Inject, OnInit, ViewChild, OnDestroy} from '@angular/core';
 import {TasksService} from './tasks.service';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import {Subscription} from 'rxjs';
+import {NavService} from '../../nav.service';
 
 @Component({
   selector: 'app-tasks',
@@ -9,16 +11,25 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
   providers: [TasksService]
 })
 
-export class TasksComponent implements OnInit {
+export class TasksComponent implements OnInit, OnDestroy {
 
-  constructor(public tasksService: TasksService) {
+  message: string;
+  subscription: Subscription;
+  public view: string;
+
+  constructor(public tasksService: TasksService, private navService: NavService) {
   }
-  public view = 'tasks';
+
   ngOnInit() {
-    console.log('TasksComponent');
+    this.subscription = this.navService.getMessage().subscribe(message => { this.setView(message); });
   }
   setView(view: string) {
     this.view = view;
+  }
+
+  ngOnDestroy(): void {
+
+    this.subscription.unsubscribe();
   }
 
 }

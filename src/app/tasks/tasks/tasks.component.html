@@ -1,9 +1,9 @@
 <mat-toolbar style="width: 100%">
-  <mat-button-toggle-group>
-    <mat-button-toggle (click)="setView('tasks')">Tasks</mat-button-toggle>
-      <mat-button-toggle (click)="setView('calendar')">Calendar</mat-button-toggle>
-      <mat-button-toggle (click)="setView('diagramm')">Gant</mat-button-toggle>
-  </mat-button-toggle-group>
+<!--  <mat-button-toggle-group>-->
+<!--    <mat-button-toggle (click)="setView('tasks')">Tasks</mat-button-toggle>-->
+<!--      <mat-button-toggle (click)="setView('calendar')">Calendar</mat-button-toggle>-->
+<!--      <mat-button-toggle (click)="setView('gantt')">Gant</mat-button-toggle>-->
+<!--  </mat-button-toggle-group>-->
 </mat-toolbar>
 <div *ngIf="view === 'tasks'">
     <mat-form-field>
@@ -31,7 +31,7 @@
         <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
     </div>
 </div>
-<div *ngIf="view === 'diagramm'">
+<div *ngIf="view === 'gantt'">
     <app-diagramm></app-diagramm>
 </div>
 <div *ngIf="view === 'calendar'">

@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import {MatTreeFlatDataSource} from '@angular/material';
+import {NavService} from '../nav.service';
 
 @Component({
   selector: 'app-nav',
@@ -16,6 +18,7 @@ export class NavComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+
+  constructor(private breakpointObserver: BreakpointObserver, public navService: NavService) {}
 
 }
