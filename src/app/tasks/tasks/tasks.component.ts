@@ -11,8 +11,6 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 
 export class TasksComponent implements OnInit {
 
-  @ViewChild(MatSort) sort: MatSort;
-
   constructor(public tasksService: TasksService) {
   }
   public view = 'tasks';
@@ -22,8 +20,5 @@ export class TasksComponent implements OnInit {
   setView(view: string) {
     this.view = view;
   }
-  ngOnInit() {
-   
-      this.dataSource.sort = this.sort;
-  }
+
 }
