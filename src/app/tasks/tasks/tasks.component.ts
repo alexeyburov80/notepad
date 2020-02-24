@@ -12,8 +12,6 @@ import {NavService} from '../../nav.service';
 })
 
 export class TasksComponent implements OnInit, OnDestroy {
-
-  message: string;
   subscription: Subscription;
   public view: string;
 

@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {MatIcon, MatButton} from '@angular/material';
 
 import { ButtonsComponent } from './buttons.component';
 

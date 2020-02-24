@@ -12,7 +12,6 @@ export class DragDropDirective {
   
   //Dragover listener
   @HostListener('dragover', ['$event']) onDragOver(evt) {
-    alert(21);
     evt.preventDefault();
     evt.stopPropagation();
     this.background = '#9ecbec';
@@ -20,7 +19,6 @@ export class DragDropDirective {
   }
   //Dragleave listener
   @HostListener('dragleave', ['$event']) public onDragLeave(evt) {
-    alert(11);
     evt.preventDefault();
     evt.stopPropagation();
     this.background = '#f5fcff'
@@ -28,21 +26,23 @@ export class DragDropDirective {
   }
   //Drop listener
   @HostListener('drop', ['$event']) public ondrop(evt) {
-    alert(1);
     evt.preventDefault();
-    alert(2);
     evt.stopPropagation();
-    alert(3);
     this.background = '#f5fcff'
-    alert(4);
     this.opacity = '1'
-    alert(5);
     const files = evt.dataTransfer.files;
     alert(files);
     if (files.length > 0) {
       this.onFileDropped.emit(files)
     }
-
   }
+
+  // @HostListener('mouseenter') onMouseEnter() {
+  //   console.log('mouseenter');
+  // }
+  //
+  // @HostListener('mouseleave') onMouseLeave() {
+  //   console.log('mouseleave');
+  // }
 
 }
