@@ -53,7 +53,7 @@ export class PopupEditTasksComponent implements OnInit {
         // this.estimationTypeBuilld();
     }
 
-    initData() {
+    saveData() {
         this.data.id = this.reactiveForm.value.id,
             this.data.name = this.reactiveForm.value.name,
             this.data.estimation = this.reactiveForm.value.estimation,

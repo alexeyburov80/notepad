@@ -3,7 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import {MatTreeFlatDataSource} from '@angular/material';
-import {NavService} from '../nav.service';
+import {NavService} from '../services/nav.service';
 
 @Component({
   selector: 'app-nav',
