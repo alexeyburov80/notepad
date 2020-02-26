@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { NavComponent } from './nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
+import {TextnotesModule} from './textnotes/textnotes.module';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
         MatSidenavModule,
         MatIconModule,
         MatListModule,
-        HttpClientModule
+        HttpClientModule,
+        TextnotesModule
     ],
   providers: [],
   bootstrap: [AppComponent]
