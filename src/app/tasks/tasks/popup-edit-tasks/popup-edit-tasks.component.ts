@@ -4,6 +4,7 @@ import {TasksService} from '../tasks.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {EstimationType, TasksDataInterface} from '../tasks-data-interface';
 import {UploadFileComponent} from './upload-file/upload-file.component';
+import {TextnotesComponent} from '../../../textnotes/textnotes/textnotes.component';
 
 
 
@@ -37,7 +38,7 @@ export class PopupEditTasksComponent implements OnInit {
             id: [this.data.id],
             name: [this.data.name],
             description: [this.data.description],
-            checkList: [this.data.checkList],
+            notesList: [this.data.notesList],
             documents: [this.data.documents],
             estimation: [this.data.estimation],
             estimationType: [this.data.estimationType],
@@ -58,7 +59,7 @@ export class PopupEditTasksComponent implements OnInit {
             this.data.name = this.reactiveForm.value.name,
             this.data.estimation = this.reactiveForm.value.estimation,
             this.data.description = this.reactiveForm.value.description,
-            this.data.checkList = this.reactiveForm.value.checkList,
+            this.data.notesList = this.reactiveForm.value.notesList,
             this.data.documents = this.reactiveForm.value.documents,
             this.data.estimationType = this.reactiveForm.value.estimationType,
             this.data.dedline = this.reactiveForm.value.dedline,
@@ -81,6 +82,16 @@ export class PopupEditTasksComponent implements OnInit {
             // console.log('The dialog was closed', this.currentTask);
             // this.currentTask.id = 456789;
 
+        });
+    }
+
+    addTextNotes() {
+        const dialogRef = this.dialog.open(TextnotesComponent, {
+            width: '540px',
+            data: ''
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed', this.data.documents);
         });
     }
 

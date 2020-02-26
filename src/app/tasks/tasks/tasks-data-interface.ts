@@ -5,7 +5,7 @@ export interface TasksDataInterface {
   // Описание
   description?: string;
   // Чек лист для проверки задачи
-  checkList?: string[];
+  notesList?: string[];
   // Документы
   documents?: File[];
   // Оценка время исполнения < 100

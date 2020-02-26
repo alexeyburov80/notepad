@@ -24,6 +24,8 @@ import {MomentModule} from 'angular2-moment';
 import {UploadFileComponent} from './tasks/popup-edit-tasks/upload-file/upload-file.component';
 import { DiagrammComponent } from './tasks/diagramm/diagramm.component';
 import { CalendarComponent } from './tasks/calendar/calendar.component';
+import {TextnotesModule} from '../textnotes/textnotes.module';
+import {TextnotesComponent} from '../textnotes/textnotes/textnotes.component';
 
 @NgModule({
     declarations: [
@@ -60,11 +62,12 @@ import { CalendarComponent } from './tasks/calendar/calendar.component';
         MomentModule,
         MatToolbarModule,
         MatButtonToggleModule,
-        // MatMomentDateModule,
+        TextnotesModule
     ],
     entryComponents: [
         PopupEditTasksComponent,
-        UploadFileComponent
+        UploadFileComponent,
+        TextnotesComponent
     ]
 })
 export class TasksModule {

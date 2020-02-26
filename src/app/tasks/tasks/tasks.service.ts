@@ -17,6 +17,7 @@ export class TasksService {
                 private http: HttpService) {
 
         this.http.getTasks().subscribe(
+            // tslint:disable-next-line:no-shadowed-variable
             tasks => {
                 console.log(tasks);
             }
@@ -32,7 +33,7 @@ export class TasksService {
         {eng: 'id', rus: 'id', visible: true, type: 'string'},
         {eng: 'name', rus: 'Название', visible: true, type: 'string'},
         {eng: 'description', rus: 'Описание', visible: true, type: 'string'},
-        {eng: 'checkList', rus: 'Чек лист для проверки задачи', visible: false, type: 'string'},
+        {eng: 'notesList', rus: 'Чек лист для проверки задачи', visible: false, type: 'string'},
         {eng: 'documents', rus: 'Документы', visible: false, type: 'string'},
         {eng: 'estimation', rus: 'Оценка время исполнения', visible: true, type: 'string'},
         {eng: 'estimationType', rus: 'Тип оценки времени', visible: false, type: 'string'},
@@ -83,7 +84,7 @@ export class TasksService {
             name: '',
             estimation: 0,
             description: '',
-            checkList: [],
+            notesList: [],
             documents: [],
             estimationType: EstimationType.DAYS,
             dedline: new Date(),
@@ -122,7 +123,6 @@ export class TasksService {
         });
     }
 
-
     initList() {
         this.taskList = [
             {
@@ -130,7 +130,7 @@ export class TasksService {
                 name: 'Hydrogen',
                 estimation: 1.0079,
                 description: 'H',
-                checkList: [],
+                notesList: [],
                 documents: [],
                 estimationType: EstimationType.DAYS,
                 dedline: new Date(),
@@ -146,7 +146,7 @@ export class TasksService {
                 name: 'Helium',
                 estimation: 4.0026,
                 description: 'He',
-                checkList: [],
+                notesList: [],
                 documents: [],
                 estimationType: EstimationType.DAYS,
                 dedline: new Date(),
@@ -162,7 +162,7 @@ export class TasksService {
                 name: 'Lithium',
                 estimation: 6.941,
                 description: 'Li',
-                checkList: [],
+                notesList: [],
                 documents: [],
                 estimationType: EstimationType.DAYS,
                 dedline: new Date(),
@@ -178,7 +178,7 @@ export class TasksService {
                 name: 'Beryllium',
                 estimation: 9.0122,
                 description: 'Be',
-                checkList: [],
+                notesList: [],
                 documents: [],
                 estimationType: EstimationType.DAYS,
                 dedline: new Date(),
@@ -194,7 +194,7 @@ export class TasksService {
                 name: 'Boron',
                 estimation: 10.811,
                 description: 'B',
-                checkList: [],
+                notesList: [],
                 documents: [],
                 estimationType: EstimationType.DAYS,
                 dedline: new Date(),
@@ -210,7 +210,7 @@ export class TasksService {
                 name: 'Carbon',
                 estimation: 12.0107,
                 description: 'C',
-                checkList: [],
+                notesList: [],
                 documents: [],
                 estimationType: EstimationType.DAYS,
                 dedline: new Date(),
@@ -226,7 +226,7 @@ export class TasksService {
                 name: 'Nitrogen',
                 estimation: 14.0067,
                 description: 'N',
-                checkList: [],
+                notesList: [],
                 documents: [],
                 estimationType: EstimationType.DAYS,
                 dedline: new Date(),
@@ -242,7 +242,7 @@ export class TasksService {
                 name: 'Oxygen',
                 estimation: 15.9994,
                 description: 'O',
-                checkList: [],
+                notesList: [],
                 documents: [],
                 estimationType: EstimationType.DAYS,
                 dedline: new Date(),
@@ -258,7 +258,7 @@ export class TasksService {
                 name: 'Fluorine',
                 estimation: 18.9984,
                 description: 'F',
-                checkList: [],
+                notesList: [],
                 documents: [],
                 estimationType: EstimationType.DAYS,
                 dedline: new Date(),
@@ -274,7 +274,7 @@ export class TasksService {
                 name: 'Neon',
                 estimation: 20.1797,
                 description: 'Ne',
-                checkList: [],
+                notesList: [],
                 documents: [],
                 estimationType: EstimationType.DAYS,
                 dedline: new Date(),

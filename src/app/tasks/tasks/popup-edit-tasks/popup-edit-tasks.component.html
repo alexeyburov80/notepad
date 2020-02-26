@@ -30,18 +30,26 @@
         </mat-grid-tile>
 
         <mat-grid-tile>
-            <mat-form-field>
-                <mat-label>checkList</mat-label>
-                <input matInput placeholder="checkList" formControlName="checkList" value="{{data.checkList}}">
-            </mat-form-field>
+<!--            <mat-form-field>-->
+<!--                <mat-label>notesList</mat-label>-->
+<!--                <input matInput disabled placeholder="notesList" formControlName="notesList" value="Count {{data.notesList.length}} notes"-->
+<!--                (click) = "addTextNotes()"-->
+<!--                >-->
+<!--            </mat-form-field>-->
+
+            <mat-label >{{data.notesList.length}} notes stored.</mat-label>
+            <button mat-button (click)="addTextNotes()">Add..</button>
         </mat-grid-tile>
 
         <mat-grid-tile>
-            <mat-form-field>
-                <mat-label>documents</mat-label>
-                <input matInput placeholder="documents" formControlName="documents" (click)="initDocList()"
-                       value="Uploaded {{data.documents.length}} docs.">
-            </mat-form-field>
+<!--            <mat-form-field>-->
+<!--                <mat-label>documents</mat-label>-->
+<!--                <input matInput placeholder="documents" formControlName="documents" (click)="initDocList()"-->
+<!--                       value="Uploaded {{data.documents.length}} docs.">-->
+<!--            </mat-form-field>-->
+            <mat-label (click)="initDocList()">Uploaded {{data.documents.length}} docs.</mat-label>
+            <button mat-button (click)="initDocList()">Add..</button>
+
         </mat-grid-tile>
 
         <mat-grid-tile>

@@ -11,7 +11,7 @@ import {TasksDataInterface} from '../../tasks-data-interface';
 })
 export class UploadFileComponent  {
 
-  files: any = [];
+  files: string[] = [];
 
   constructor(
       @Inject(MAT_DIALOG_DATA) public data: File[],
@@ -30,6 +30,7 @@ export class UploadFileComponent  {
       this.data.push(element);
     }  
   }
+
   deleteAttachment(index) {
     this.files.splice(index, 1);
     this.data.splice(index, 1);
