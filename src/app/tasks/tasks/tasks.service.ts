@@ -9,19 +9,19 @@ import {HttpService} from '../../services/http.service';
 })
 export class TasksService {
 
-    dataSource: MatTableDataSource<TasksDataInterface>;
+    public dataSource: MatTableDataSource<TasksDataInterface>;
     private taskList: TasksDataInterface[] = [];
     private currentTask: TasksDataInterface;
 
     constructor(public dialog: MatDialog,
                 private http: HttpService) {
 
-        this.http.getTasks().subscribe(
-            // tslint:disable-next-line:no-shadowed-variable
-            tasks => {
-                console.log(tasks);
-            }
-        );
+        // this.http.getTasks().subscribe(
+        //     // tslint:disable-next-line:no-shadowed-variable
+        //     tasks => {
+        //         console.log(tasks);
+        //     }
+        // );
 
         this.initList();
 
@@ -89,7 +89,7 @@ export class TasksService {
             estimationType: EstimationType.DAYS,
             dedline: new Date(),
             criticality: CriticalityType.NOTIMPORTANT,
-            tags: [],
+            tags: 'eco',
             startTime: new Date(),
             endTime: new Date(),
             state: StateType.NEW,
@@ -116,10 +116,10 @@ export class TasksService {
         dialogRef.afterClosed().subscribe(result => {
             console.log('The dialog was closed', this.currentTask);
 
-            ///todo mem check!
-           this.http.updateTasks(this.currentTask).subscribe(res => {
-             console.log(res);
-           });
+            /// todo mem check!
+           //  this.http.updateTasks(this.currentTask).subscribe(res => {
+           //   console.log(res);
+           // });
         });
     }
 
@@ -127,15 +127,15 @@ export class TasksService {
         this.taskList = [
             {
                 id: 1,
-                name: 'Hydrogen',
+                name: 'Development of design',
                 estimation: 1.0079,
-                description: 'H',
+                description: '',
                 notesList: [],
                 documents: [],
                 estimationType: EstimationType.DAYS,
                 dedline: new Date(),
                 criticality: CriticalityType.NOTIMPORTANT,
-                tags: [],
+                tags: 'eco',
                 startTime: new Date(),
                 endTime: new Date(),
                 state: StateType.NEW,
@@ -143,15 +143,15 @@ export class TasksService {
             },
             {
                 id: 2,
-                name: 'Helium',
+                name: 'Frontend',
                 estimation: 4.0026,
-                description: 'He',
+                description: 'HTML, CSS & JavaScript',
                 notesList: [],
                 documents: [],
                 estimationType: EstimationType.DAYS,
                 dedline: new Date(),
                 criticality: CriticalityType.IMPORTANT,
-                tags: [],
+                tags: 'face',
                 startTime: new Date(),
                 endTime: new Date(),
                 state: StateType.NEW,
@@ -159,15 +159,15 @@ export class TasksService {
             },
             {
                 id: 3,
-                name: 'Lithium',
+                name: 'Backend',
                 estimation: 6.941,
-                description: 'Li',
+                description: 'python PSQL SQLITE',
                 notesList: [],
                 documents: [],
                 estimationType: EstimationType.DAYS,
                 dedline: new Date(),
                 criticality: CriticalityType.IMPORTANT,
-                tags: [],
+                tags: 'opacity',
                 startTime: new Date(),
                 endTime: new Date(),
                 state: StateType.NEW,
@@ -175,15 +175,15 @@ export class TasksService {
             },
             {
                 id: 4,
-                name: 'Beryllium',
+                name: 'Distribution',
                 estimation: 9.0122,
-                description: 'Be',
+                description: '',
                 notesList: [],
                 documents: [],
                 estimationType: EstimationType.DAYS,
                 dedline: new Date(),
                 criticality: CriticalityType.IMPORTANT,
-                tags: [],
+                tags: 'track_changes',
                 startTime: new Date(),
                 endTime: new Date(),
                 state: StateType.NEW,
@@ -191,95 +191,15 @@ export class TasksService {
             },
             {
                 id: 5,
-                name: 'Boron',
+                name: 'Deploying',
                 estimation: 10.811,
-                description: 'B',
+                description: 'Software deployment is all of the activities that make a software system available for use.',
                 notesList: [],
                 documents: [],
                 estimationType: EstimationType.DAYS,
                 dedline: new Date(),
                 criticality: CriticalityType.IMPORTANT,
-                tags: [],
-                startTime: new Date(),
-                endTime: new Date(),
-                state: StateType.NEW,
-                notifications: []
-            },
-            {
-                id: 6,
-                name: 'Carbon',
-                estimation: 12.0107,
-                description: 'C',
-                notesList: [],
-                documents: [],
-                estimationType: EstimationType.DAYS,
-                dedline: new Date(),
-                criticality: CriticalityType.IMPORTANT,
-                tags: [],
-                startTime: new Date(),
-                endTime: new Date(),
-                state: StateType.NEW,
-                notifications: []
-            },
-            {
-                id: 7,
-                name: 'Nitrogen',
-                estimation: 14.0067,
-                description: 'N',
-                notesList: [],
-                documents: [],
-                estimationType: EstimationType.DAYS,
-                dedline: new Date(),
-                criticality: CriticalityType.IMPORTANT,
-                tags: [],
-                startTime: new Date(),
-                endTime: new Date(),
-                state: StateType.NEW,
-                notifications: []
-            },
-            {
-                id: 8,
-                name: 'Oxygen',
-                estimation: 15.9994,
-                description: 'O',
-                notesList: [],
-                documents: [],
-                estimationType: EstimationType.DAYS,
-                dedline: new Date(),
-                criticality: CriticalityType.IMPORTANT,
-                tags: [],
-                startTime: new Date(),
-                endTime: new Date(),
-                state: StateType.NEW,
-                notifications: []
-            },
-            {
-                id: 9,
-                name: 'Fluorine',
-                estimation: 18.9984,
-                description: 'F',
-                notesList: [],
-                documents: [],
-                estimationType: EstimationType.DAYS,
-                dedline: new Date(),
-                criticality: CriticalityType.IMPORTANT,
-                tags: [],
-                startTime: new Date(),
-                endTime: new Date(),
-                state: StateType.NEW,
-                notifications: []
-            },
-            {
-                id: 10,
-                name: 'Neon',
-                estimation: 20.1797,
-                description: 'Ne',
-                notesList: [],
-                documents: [],
-                estimationType: EstimationType.DAYS,
-                dedline: new Date(),
-                criticality: CriticalityType.IMPORTANT,
-                tags: [],
+                tags: 'work_outline',
                 startTime: new Date(),
                 endTime: new Date(),
                 state: StateType.NEW,

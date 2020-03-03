@@ -4,6 +4,8 @@
 <div class="files-list" *ngFor="let file of files;let i=index">
     <p>{{ file }}</p>
     <button class="delete-file" (click)="deleteAttachment(i)">
-        <img src="../../../../../assets/Recycle_Bin_Full.png">
+        <i class="material-icons">
+            delete
+        </i>
     </button>
 </div>

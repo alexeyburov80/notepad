@@ -17,7 +17,7 @@ export interface TasksDataInterface {
   // Критичность
   criticality?: CriticalityType;
   // Теги
-  tags?: string[];
+  tags?: string;
   // Время начала
   startTime?: Date;
   // Время завершения

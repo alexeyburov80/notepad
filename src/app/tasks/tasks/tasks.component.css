@@ -1,0 +1,28 @@
+.tasks {
+    padding: 20px;
+}
+
+.desktop {
+    visibility: visible;
+}
+
+@media (max-width: 768px) {
+    /*.desktop {*/
+    /*    visibility: hidden;*/
+    /*}*/
+
+    /*.tags {*/
+    /*    visibility: hidden;*/
+    /*}*/
+}
+@media (max-width: 680px) {
+    /*.description {*/
+    /*    visibility: hidden;*/
+    /*}*/
+    /*.estimation {*/
+    /*    visibility: hidden;*/
+    /*}*/
+    /*.dedline {*/
+    /*    visibility: hidden;*/
+    /*}*/
+}

@@ -10,7 +10,7 @@ import {DiagrammService} from './diagramm.service';
 export class DiagrammComponent implements OnInit, OnDestroy {
 
   public diagrammService: DiagrammService;
-  public width = 1900;
+  public width = window.innerWidth;
   public height = 1080;
   constructor(
       public tasksService: TasksService

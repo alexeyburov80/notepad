@@ -1,0 +1,8 @@
+.notes-header-image {
+    background-size: cover;
+}
+.notes-content {
+    padding: 5px;
+    margin: 2px;
+    border: 1px solid grey;
+}

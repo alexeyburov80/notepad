@@ -1,9 +1,16 @@
 <ckeditor [editor]="editor" [(ngModel)]="editorData"></ckeditor>
-<button (click)="save()">Save</button>
-<div class="files-list" *ngFor="let file of files;let i=index">
-    <p>{{ file }}</p>
+<button mat-button (click)="save()" [mat-dialog-close]="data">
+<!--    {{'save' | uppercase}}-->
+    <i class="material-icons">
+        save
+    </i>
+</button>
+<div class="files-list" *ngFor="let file of data;let i=index">
+    <div [innerHTML]="file"></div>
     <button class="delete-file" (click)="deleteAttachment(i)">
-        <img src="../../../../../assets/Recycle_Bin_Full.png">
+        <i class="material-icons">
+            delete
+        </i>
     </button>
 </div>
 

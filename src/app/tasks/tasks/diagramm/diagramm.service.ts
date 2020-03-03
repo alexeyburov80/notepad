@@ -26,16 +26,16 @@ export class DiagrammService {
 
     createElements(container: HTMLElement, dataSource: TasksDataInterface[]) {
 
-        let id = 50;
+        let id = 20;
 
         const group = this.createNodeSvg('g', {
-            transform: 'translate(120,50)'
+            transform: 'translate(0,50)'
         });
-        this.setGrid(group, 50, 100, 32, dataSource.length);
+        this.setGrid(group, 30, 100, 32, dataSource.length);
 
         for (const task of dataSource) {
 
-            console.log(task.name, task.startTime.getDate())
+            // console.log(task.name, task.startTime.getDate())
 
             const g = this.createNodeSvg('g', {});
             const head = this.createNodeSvg('text', {

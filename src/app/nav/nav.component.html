@@ -1,16 +1,32 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    <mat-sidenav
+        #drawer [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                  [mode]="(isHandset$ | async) ? 'over' : 'side'"
                  [opened]="(isHandset$ | async) === false"
                  class="sidenav"
                  fixedInViewport>
         <mat-toolbar>Menu</mat-toolbar>
+        <mat-divider></mat-divider>
 
         <mat-nav-list>
-            <mat-divider>tasks</mat-divider>
-                <a href="#" mat-list-item (click)="navService.sendMessage('tasks')">Tasks</a>
-                <a href="#" mat-list-item (click)="navService.sendMessage('calendar')">Task calendar</a>
-                <a href="#" mat-list-item (click)="navService.sendMessage('gantt')">Gantt</a>
+            <a href="#" mat-list-item (click)="navService.sendMessage('tasks')">
+                <mat-divider></mat-divider>
+                <mat-icon class="menu-icon">list_alt</mat-icon>
+                <span>Tasks</span>
+            </a>
+<!--            <a href="#" mat-list-item (click)="navService.sendMessage('gantt')">-->
+<!--                <mat-icon class="menu-icon">show_chart</mat-icon>-->
+<!--                <span>Gantt</span>-->
+<!--            </a>-->
+            <a href="#" mat-list-item (click)="navService.sendMessage('docs')">
+                <mat-icon class="menu-icon">file_copy</mat-icon>
+                <span>Docs</span>
+            </a>
+            <a href="#" mat-list-item (click)="navService.sendMessage('notes')">
+                <mat-icon class="menu-icon">notes</mat-icon>
+                <span>Notes</span>
+            </a>
+
             <mat-divider></mat-divider>
         </mat-nav-list>
 

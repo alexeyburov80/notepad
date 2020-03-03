@@ -14,7 +14,7 @@ import {
     MatNativeDateModule,
     // MatMomentDateModule,
     MatGridListModule,
-    MatDatepickerModule, MatToolbarModule, MatButtonToggleModule,
+    MatDatepickerModule, MatToolbarModule, MatButtonToggleModule, MatCardModule,
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ButtonsComponent} from './tasks/buttons/buttons.component';
@@ -26,6 +26,7 @@ import { DiagrammComponent } from './tasks/diagramm/diagramm.component';
 import { CalendarComponent } from './tasks/calendar/calendar.component';
 import {TextnotesModule} from '../textnotes/textnotes.module';
 import {TextnotesComponent} from '../textnotes/textnotes/textnotes.component';
+import { NotesComponent } from './tasks/notes/notes.component';
 
 @NgModule({
     declarations: [
@@ -35,6 +36,7 @@ import {TextnotesComponent} from '../textnotes/textnotes/textnotes.component';
         UploadFileComponent,
         DiagrammComponent,
         CalendarComponent,
+        NotesComponent,
         // ButtonsComponent
     ],
     exports: [
@@ -62,7 +64,8 @@ import {TextnotesComponent} from '../textnotes/textnotes/textnotes.component';
         MomentModule,
         MatToolbarModule,
         MatButtonToggleModule,
-        TextnotesModule
+        TextnotesModule,
+        MatCardModule
     ],
     entryComponents: [
         PopupEditTasksComponent,

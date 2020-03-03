@@ -6,13 +6,13 @@
   height: 200px;
   width: 80%;
   margin: 20px auto;
-  border: 2px dashed #1C8ADB;
+  border: 2px dashed #bbbbbb;
   border-radius: 10px;
 }
 
 .uploadfilecontainer:hover {
   cursor: pointer;
-  background-color: #9ecbec !important;
+  background-color: rgba(167, 214, 248, 0.3) !important;
   opacity: 0.8;
 }
 
@@ -25,7 +25,7 @@
   border: 1px dashed;
   border-radius: 12px;
   padding: 5px;
-  color: #1c8adb;
+  color: #000000;
 }
 
 .files-list .delete-file {

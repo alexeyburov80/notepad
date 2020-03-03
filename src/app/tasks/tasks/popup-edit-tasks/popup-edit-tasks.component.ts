@@ -88,7 +88,7 @@ export class PopupEditTasksComponent implements OnInit {
     addTextNotes() {
         const dialogRef = this.dialog.open(TextnotesComponent, {
             width: '540px',
-            data: ''
+            data: this.data.notesList
         });
         dialogRef.afterClosed().subscribe(result => {
             console.log('The dialog was closed', this.data.documents);
