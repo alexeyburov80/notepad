@@ -1,11 +1,4 @@
 <div class="tasks">
-    <mat-toolbar style="width: 100%">
-        <!--  <mat-button-toggle-group>-->
-        <!--    <mat-button-toggle (click)="setView('tasks')">Tasks</mat-button-toggle>-->
-        <!--      <mat-button-toggle (click)="setView('calendar')">Calendar</mat-button-toggle>-->
-        <!--      <mat-button-toggle (click)="setView('gantt')">Gant</mat-button-toggle>-->
-        <!--  </mat-button-toggle-group>-->
-    </mat-toolbar>
     <div *ngIf="view === 'tasks'">
         <mat-form-field>
             <input matInput (keyup)="tasksService.applyFilter($event.target.value)" placeholder="Filter">
@@ -37,5 +30,17 @@
     </div>
     <div *ngIf="view === 'notes'">
         <app-notes></app-notes>
+    </div>
+    <div *ngIf="view === 'tags'">
+        <app-tags></app-tags>
+    </div>
+    <div *ngIf="view === 'deadlines'">
+        <app-deadlines></app-deadlines>
+    </div>
+    <div *ngIf="view === 'states'">
+        <app-states></app-states>
+    </div>
+    <div *ngIf="view === 'docs'">
+        <app-files></app-files>
     </div>
 </div>

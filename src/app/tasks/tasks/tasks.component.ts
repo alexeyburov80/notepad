@@ -41,6 +41,7 @@ export class TasksComponent implements OnInit, OnDestroy {
             this.tasksService.aliases.map((t) => {
                 if (t.eng === 'dedline' ||
                     t.eng === 'id' ||
+                    t.eng === 'estimation' ||
                     t.eng === 'description' ||
                     t.eng === 'tags'
                 ) {
@@ -54,6 +55,7 @@ export class TasksComponent implements OnInit, OnDestroy {
             this.tasksService.aliases.map((t) => {
                 if (t.eng === 'dedline' ||
                     t.eng === 'id' ||
+                    t.eng === 'estimation' ||
                     t.eng === 'description' ||
                     t.eng === 'tags'
                 ) {

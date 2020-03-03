@@ -1,3 +1,17 @@
-.spacer {
-    width: 100%;
+/*.spacer {*/
+/*    width: 100%;*/
+/*}*/
+.flex-container {
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.field-container {
+    -webkit-flex: 3 1 200px;
+    -ms-flex:  3 1 200px;
+    flex:  3 1 200px;
+    padding: 10px;
+    margin: 5px;
 }

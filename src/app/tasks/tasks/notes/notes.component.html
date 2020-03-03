@@ -1,16 +1,15 @@
 <mat-card *ngFor="let task of taskService.dataSource.data">
-    <mat-card-header>
-        <i class="material-icons">{{task.tags}}</i>
+    <mat-card-header *ngIf="task.notesList.length">
         <mat-card-title>{{task.name}}</mat-card-title>
         <mat-card-subtitle>{{task.description}}</mat-card-subtitle>
     </mat-card-header>
 
-    <mat-card-content>
+    <mat-card-content *ngIf="task.notesList.length">
         <div *ngFor="let notes of task.notesList" [innerHTML]="notes" class="notes-content">
 
         </div>
     </mat-card-content>
-    <mat-card-actions>
+    <mat-card-actions *ngIf="task.notesList.length">
         <button mat-button>UP</button>
         <button mat-button>DOWN</button>
     </mat-card-actions>

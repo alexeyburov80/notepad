@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, HostListener, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
 import {TasksService} from '../tasks.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
@@ -21,6 +21,7 @@ export class PopupEditTasksComponent implements OnInit {
     public estimationTypeList = ['HOURS', 'DAYS', ' WEEKS', 'OF100'];
     public criticalityTypeList = [ 'NOTIMPORTANT', 'IMPORTANT', 'VERYIMPORTANT'];
     public stateTypeList = ['NEW', 'IN_PROCESS', 'DONE'];
+    cols: number = 2;
 
     constructor(
         public dialog: MatDialog,
@@ -106,5 +107,18 @@ export class PopupEditTasksComponent implements OnInit {
         const form: TasksDataInterface = this.reactiveForm.value;
 
         this.dialogRef.close();
+    }
+
+
+    @HostListener('window:resize', ['$event'])
+    onResize(event) {
+        if (window.matchMedia('(max-width: 768px)').matches) {
+           this.cols = 2;
+        }
+
+        if (window.matchMedia('(min-width: 769px)').matches) {
+            this.cols = 1;
+        }
+
     }
 }

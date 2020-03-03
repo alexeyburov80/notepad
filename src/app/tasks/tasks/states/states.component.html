@@ -1,0 +1,6 @@
+<mat-card *ngFor="let task of taskService.dataSource.data">
+    <mat-card-header>
+        <mat-card-title>{{task.name}}</mat-card-title>
+        <mat-card-subtitle>{{task.state}}</mat-card-subtitle>
+    </mat-card-header>
+</mat-card>

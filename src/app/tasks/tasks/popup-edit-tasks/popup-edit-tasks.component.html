@@ -1,35 +1,35 @@
 <form [formGroup]="reactiveForm">
     <h4>Edit datas {{data.name}}</h4>
-    <mat-grid-list cols="2" rowHeight="3:1">
-        <!--        <mat-grid-tile *ngFor="let l of interfaceKeys(data)">-->
+    <div class="flex-container">
+        <!--        <div *ngFor="let l of interfaceKeys(data)">-->
         <!--            <mat-form-field>-->
         <!--                <mat-label>{{l.val}}</mat-label>-->
         <!--                <input ngI matInput placeholder="{{l.val}}" formControlName="{{l.val}}"  value="{{ data[l.val] }}">-->
         <!--            </mat-form-field>-->
-        <!--        </mat-grid-tile>-->
+        <!--        </div>-->
 
-        <mat-grid-tile>
+        <div class="field-container">
             <mat-form-field>
                 <mat-label>ID</mat-label>
                 <input type="number" matInput placeholder="id" formControlName="name" value="{{data.id}}">
             </mat-form-field>
-        </mat-grid-tile>
+        </div>
 
-        <mat-grid-tile>
+        <div class="field-container">
             <mat-form-field>
                 <mat-label>name</mat-label>
                 <input matInput placeholder="name" formControlName="name" value="{{data.name}}">
             </mat-form-field>
-        </mat-grid-tile>
+        </div>
 
-        <mat-grid-tile>
+        <div class="field-container">
             <mat-form-field>
                 <mat-label>description</mat-label>
                 <input matInput placeholder="description" formControlName="description" value="{{data.description}}">
             </mat-form-field>
-        </mat-grid-tile>
+        </div>
 
-        <mat-grid-tile>
+        <div class="field-container">
 <!--            <mat-form-field>-->
 <!--                <mat-label>notesList</mat-label>-->
 <!--                <input matInput disabled placeholder="notesList" formControlName="notesList" value="Count {{data.notesList.length}} notes"-->
@@ -39,9 +39,9 @@
 
             <mat-label >{{data.notesList.length}} notes stored.</mat-label>
             <button mat-button (click)="addTextNotes()">Add..</button>
-        </mat-grid-tile>
+        </div>
 
-        <mat-grid-tile>
+        <div class="field-container">
 <!--            <mat-form-field>-->
 <!--                <mat-label>documents</mat-label>-->
 <!--                <input matInput placeholder="documents" formControlName="documents" (click)="initDocList()"-->
@@ -50,16 +50,16 @@
             <mat-label (click)="initDocList()">Uploaded {{data.documents.length}} docs.</mat-label>
             <button mat-button (click)="initDocList()">Add..</button>
 
-        </mat-grid-tile>
+        </div>
 
-        <mat-grid-tile>
+        <div class="field-container">
             <mat-form-field>
                 <mat-label>estimation</mat-label>
                 <input type="number" matInput placeholder="estimation" formControlName="estimation" value="{{data.estimation}}">
             </mat-form-field>
-        </mat-grid-tile>
+        </div>
 
-        <mat-grid-tile>
+        <div class="field-container">
             <mat-form-field>
                 <mat-label>estimationType</mat-label>
                 <mat-select formControlName="estimationType" [value]="data.estimationType">
@@ -67,18 +67,18 @@
                     <mat-option *ngFor="let opt of estimationTypeList" [value]="opt"> {{ opt }} </mat-option>
                 </mat-select>
             </mat-form-field>
-        </mat-grid-tile>
+        </div>
 
-        <mat-grid-tile>
+        <div class="field-container">
             <mat-form-field>
                 <mat-label>dedline</mat-label>
                 <input matInput [matDatepicker]="dedline" formControlName="dedline">
                 <mat-datepicker-toggle matSuffix [for]="dedline"></mat-datepicker-toggle>
                 <mat-datepicker #dedline></mat-datepicker>
             </mat-form-field>
-        </mat-grid-tile>
+        </div>
 
-        <mat-grid-tile>
+        <div class="field-container">
             <mat-form-field>
                 <mat-label>criticality</mat-label>
                 <mat-select formControlName="criticality" [value]="data.estimationType">
@@ -86,33 +86,33 @@
                     <mat-option *ngFor="let opt of criticalityTypeList" [value]="criticalityTypeList.indexOf(opt)"> {{ opt }} </mat-option>
                 </mat-select>
             </mat-form-field>
-        </mat-grid-tile>
+        </div>
 
-<!--        <mat-grid-tile>-->
+<!--        <div>-->
 <!--            <p>tags: </p>-->
 <!--           <span class="spacer"></span>-->
 <!--            <i class="material-icons">{{data.tags}}</i>-->
-<!--        </mat-grid-tile>-->
+<!--        </div>-->
 
-        <mat-grid-tile>
+        <div class="field-container">
             <mat-form-field>
                 <mat-label>startTime</mat-label>
                 <input matInput [matDatepicker]="startTime" formControlName="startTime">
                 <mat-datepicker-toggle matSuffix [for]="startTime"></mat-datepicker-toggle>
                 <mat-datepicker #startTime></mat-datepicker>
             </mat-form-field>
-        </mat-grid-tile>
+        </div>
 
-        <mat-grid-tile>
+        <div class="field-container">
             <mat-form-field>
                 <mat-label>endTime</mat-label>
                 <input matInput [matDatepicker]="endTime" formControlName="endTime">
                 <mat-datepicker-toggle matSuffix [for]="endTime"></mat-datepicker-toggle>
                 <mat-datepicker #endTime></mat-datepicker>
             </mat-form-field>
-        </mat-grid-tile>
+        </div>
 
-        <mat-grid-tile>
+        <div class="field-container">
             <mat-form-field>
                 <mat-label>state</mat-label>
                 <mat-select formControlName="state" [value]="data.state">
@@ -120,19 +120,19 @@
                     <mat-option *ngFor="let opt of stateTypeList" [value]="stateTypeList.indexOf(opt)"> {{ opt }} </mat-option>
                 </mat-select>
             </mat-form-field>
-        </mat-grid-tile>
+        </div>
 
-        <mat-grid-tile>
+        <div class="field-container">
             <mat-form-field>
                 <mat-label>notifications</mat-label>
                 <input matInput placeholder="notifications" formControlName="notifications"
                        value="{{data.notifications}}">
             </mat-form-field>
-        </mat-grid-tile>
+        </div>
 
-        <mat-grid-tile>
+        <div class="field-container">
             <button mat-button color="primary" (click)="saveData()" [mat-dialog-close]="data">save</button>
-        </mat-grid-tile>
-    </mat-grid-list>
+        </div>
+    </div>
 </form>
 

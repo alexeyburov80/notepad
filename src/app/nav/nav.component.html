@@ -26,6 +26,20 @@
                 <mat-icon class="menu-icon">notes</mat-icon>
                 <span>Notes</span>
             </a>
+            <a href="#" mat-list-item (click)="navService.sendMessage('tags')">
+                <mat-icon class="menu-icon">tag</mat-icon>
+                <span>Tags</span>
+            </a>
+            <a href="#" mat-list-item (click)="navService.sendMessage('deadlines')">
+                <mat-icon class="menu-icon">alarm_on</mat-icon>
+                <span>Dedlines</span>
+            </a>
+
+            <a href="#" mat-list-item (click)="navService.sendMessage('states')">
+                <mat-icon class="menu-icon">data_usage</mat-icon>
+                <span>States</span>
+            </a>
+
 
             <mat-divider></mat-divider>
         </mat-nav-list>

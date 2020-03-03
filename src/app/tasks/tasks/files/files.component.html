@@ -1,0 +1,12 @@
+<mat-card *ngFor="let task of taskService.dataSource.data">
+    <mat-card-header>
+        <mat-card-title>{{task.name}}</mat-card-title>
+        <ul>
+            <li *ngFor="let doc of task.documents">
+                <div>{{doc.name}}</div>
+                <div>{{doc.size / 1024}} kb</div>
+            </li>
+        </ul>
+    </mat-card-header>
+</mat-card>
+

@@ -27,6 +27,10 @@ import { CalendarComponent } from './tasks/calendar/calendar.component';
 import {TextnotesModule} from '../textnotes/textnotes.module';
 import {TextnotesComponent} from '../textnotes/textnotes/textnotes.component';
 import { NotesComponent } from './tasks/notes/notes.component';
+import { TagsComponent } from './tasks/tags/tags.component';
+import { StatesComponent } from './tasks/states/states.component';
+import { DeadlinesComponent } from './tasks/deadlines/deadlines.component';
+import { FilesComponent } from './tasks/files/files.component';
 
 @NgModule({
     declarations: [
@@ -37,6 +41,10 @@ import { NotesComponent } from './tasks/notes/notes.component';
         DiagrammComponent,
         CalendarComponent,
         NotesComponent,
+        TagsComponent,
+        StatesComponent,
+        DeadlinesComponent,
+        FilesComponent,
         // ButtonsComponent
     ],
     exports: [
