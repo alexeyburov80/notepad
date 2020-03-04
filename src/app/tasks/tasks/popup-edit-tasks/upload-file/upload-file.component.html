@@ -3,9 +3,10 @@
 </div>
 <div class="files-list" *ngFor="let file of files;let i=index">
     <p>{{ file }}</p>
-    <button class="delete-file" (click)="deleteAttachment(i)">
+    <button mat-button class="delete-file" (click)="deleteAttachment(i)">
         <i class="material-icons">
             delete
         </i>
     </button>
 </div>
+<button mat-button [mat-dialog-close]>{{'close' | uppercase}}</button>

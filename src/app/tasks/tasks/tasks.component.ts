@@ -24,6 +24,7 @@ export class TasksComponent implements OnInit, OnDestroy {
         this.subscription = this.navService.getMessage().subscribe(message => {
             this.setView(message);
         });
+        this.adaptiveSize();
     }
 
     setView(view: string) {
@@ -34,9 +35,7 @@ export class TasksComponent implements OnInit, OnDestroy {
         this.subscription.unsubscribe();
     }
 
-    /// todo proc
-    @HostListener('window:resize', ['$event'])
-    onResize(event) {
+    adaptiveSize() {
         if (window.matchMedia('(max-width: 768px)').matches) {
             this.tasksService.aliases.map((t) => {
                 if (t.eng === 'dedline' ||
@@ -65,6 +64,12 @@ export class TasksComponent implements OnInit, OnDestroy {
             });
         }
 
+    }
+
+    /// todo proc
+    @HostListener('window:resize', ['$event'])
+    onResize(event) {
+        this.adaptiveSize();
     }
 }
 

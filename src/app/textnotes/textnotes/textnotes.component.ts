@@ -39,7 +39,6 @@ export class TextnotesComponent implements OnInit {
 
   save() {
     this.data.push(this.editorData);
-    console.log(this.data);
   }
 
   cancel() {

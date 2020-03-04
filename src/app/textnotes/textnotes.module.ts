@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TextnotesComponent } from './textnotes/textnotes.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from '@angular/material';
+import {MAT_DIALOG_DATA, MatButtonModule, MatDialogModule, MatDialogRef} from '@angular/material';
 
 
 @NgModule({
@@ -17,6 +17,7 @@ import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from '@angular/material'
         ReactiveFormsModule,
         FormsModule,
         MatDialogModule,
+        MatButtonModule,
     ],
     providers: [{
         provide: MatDialogRef,

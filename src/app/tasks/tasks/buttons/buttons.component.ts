@@ -11,7 +11,7 @@ export class ButtonsComponent implements OnInit {
 
   @Input() name = '';
   @Output() emitEditing = new EventEmitter();
-  constructor(private tasksService: TasksService) { }
+  constructor(public tasksService: TasksService) { }
 
   ngOnInit() {
   }

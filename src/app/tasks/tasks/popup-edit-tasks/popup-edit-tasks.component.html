@@ -30,25 +30,13 @@
         </div>
 
         <div class="field-container">
-<!--            <mat-form-field>-->
-<!--                <mat-label>notesList</mat-label>-->
-<!--                <input matInput disabled placeholder="notesList" formControlName="notesList" value="Count {{data.notesList.length}} notes"-->
-<!--                (click) = "addTextNotes()"-->
-<!--                >-->
-<!--            </mat-form-field>-->
-
             <mat-label >{{data.notesList.length}} notes stored.</mat-label>
-            <button mat-button (click)="addTextNotes()">Add..</button>
+            <button mat-button (click)="addTextNotes()">{{ 'Add..' | uppercase }}</button>
         </div>
 
         <div class="field-container">
-<!--            <mat-form-field>-->
-<!--                <mat-label>documents</mat-label>-->
-<!--                <input matInput placeholder="documents" formControlName="documents" (click)="initDocList()"-->
-<!--                       value="Uploaded {{data.documents.length}} docs.">-->
-<!--            </mat-form-field>-->
             <mat-label (click)="initDocList()">Uploaded {{data.documents.length}} docs.</mat-label>
-            <button mat-button (click)="initDocList()">Add..</button>
+            <button mat-button (click)="initDocList()">{{ 'Add..' | uppercase }}</button>
 
         </div>
 
@@ -88,12 +76,6 @@
             </mat-form-field>
         </div>
 
-<!--        <div>-->
-<!--            <p>tags: </p>-->
-<!--           <span class="spacer"></span>-->
-<!--            <i class="material-icons">{{data.tags}}</i>-->
-<!--        </div>-->
-
         <div class="field-container">
             <mat-form-field>
                 <mat-label>startTime</mat-label>
@@ -131,7 +113,7 @@
         </div>
 
         <div class="field-container">
-            <button mat-button color="primary" (click)="saveData()" [mat-dialog-close]="data">save</button>
+            <button mat-button color="primary" (click)="saveData()" [mat-dialog-close]="data">{{ 'save'| uppercase }}</button>
         </div>
     </div>
 </form>

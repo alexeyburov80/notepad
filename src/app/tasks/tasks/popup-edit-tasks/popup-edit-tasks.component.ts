@@ -75,7 +75,9 @@ export class PopupEditTasksComponent implements OnInit {
     initDocList() {
         const dialogRef = this.dialog.open(UploadFileComponent, {
             width: '540px',
-            data:  this.data.documents
+            data:  this.data.documents,
+            autoFocus: false,
+            maxHeight: '90vh',
         });
         dialogRef.afterClosed().subscribe(result => {
             console.log('The dialog was closed', this.data.documents);
@@ -89,7 +91,9 @@ export class PopupEditTasksComponent implements OnInit {
     addTextNotes() {
         const dialogRef = this.dialog.open(TextnotesComponent, {
             width: '540px',
-            data: this.data.notesList
+            data: this.data.notesList,
+            autoFocus: false,
+            maxHeight: '90vh',
         });
         dialogRef.afterClosed().subscribe(result => {
             console.log('The dialog was closed', this.data.documents);
