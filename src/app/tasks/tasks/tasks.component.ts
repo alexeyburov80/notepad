@@ -5,6 +5,8 @@ import {NavService} from '../../services/nav.service';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {TasksDataInterface} from './tasks-data-interface';
+import {MatPaginator} from '@angular/material';
+
 
 
 @Component({
@@ -18,13 +20,14 @@ export class TasksComponent implements OnInit, OnDestroy {
     subscription: Subscription;
     public view = 'tasks';
     @ViewChild(MatSort, {static: true}) sort: MatSort;
-    private dataSource: MatTableDataSource<TasksDataInterface>;
+    @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+    // private dataSource: MatTableDataSource<TasksDataInterface>;
 
     constructor(
         public tasksService: TasksService,
         private navService: NavService) {
 
-        this.dataSource = new MatTableDataSource(tasksService.tasks);
+        // tasksService.dataSource = new MatTableDataSource(tasksService.tasks);
     }
 
     ngOnInit() {
@@ -32,7 +35,10 @@ export class TasksComponent implements OnInit, OnDestroy {
             this.setView(message);
         });
         this.adaptiveSize();
-        this.dataSource.sort = this.sort;
+        this.tasksService.dataSource.sort = this.sort;
+        this.tasksService.dataSource.paginator = this.paginator;
+
+        console.log(this.tasksService.dataSource.paginator);
     }
 
     setView(view: string) {
@@ -49,8 +55,7 @@ export class TasksComponent implements OnInit, OnDestroy {
                 if (t.eng === 'dedline' ||
                     t.eng === 'id' ||
                     t.eng === 'estimation' ||
-                    t.eng === 'description' ||
-                    t.eng === 'tags'
+                    t.eng === 'description'
                 ) {
                     t.visible = false;
                     return t;
@@ -63,8 +68,7 @@ export class TasksComponent implements OnInit, OnDestroy {
                 if (t.eng === 'dedline' ||
                     t.eng === 'id' ||
                     t.eng === 'estimation' ||
-                    t.eng === 'description' ||
-                    t.eng === 'tags'
+                    t.eng === 'description'
                 ) {
                     t.visible = true;
                     return t;

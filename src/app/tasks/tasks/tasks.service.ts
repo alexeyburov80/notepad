@@ -21,7 +21,7 @@ export class TasksService {
         this.initList();
         this.tasks = Array.from({length: this.taskList.length}, (_, k) => this.taskList[k]);
 
-        // this.dataSource = new MatTableDataSource(this.tasks);
+        this.dataSource = new MatTableDataSource(this.tasks);
         // this.dataSource.sort = this.sort;
     }
 
@@ -115,11 +115,6 @@ export class TasksService {
         });
         dialogRef.afterClosed().subscribe(result => {
             console.log('The dialog was closed', this.currentTask);
-
-            /// todo mem check!
-           //  this.http.updateTasks(this.currentTask).subscribe(res => {
-           //   console.log(res);
-           // });
         });
     }
 
