@@ -2,6 +2,9 @@ import {Component, Inject, OnInit, ViewChild, OnDestroy, HostListener} from '@an
 import {TasksService} from './tasks.service';
 import {Subscription} from 'rxjs';
 import {NavService} from '../../services/nav.service';
+import {MatSort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
+import {TasksDataInterface} from './tasks-data-interface';
 
 
 @Component({
@@ -14,10 +17,14 @@ import {NavService} from '../../services/nav.service';
 export class TasksComponent implements OnInit, OnDestroy {
     subscription: Subscription;
     public view = 'tasks';
+    @ViewChild(MatSort, {static: true}) sort: MatSort;
+    private dataSource: MatTableDataSource<TasksDataInterface>;
 
     constructor(
         public tasksService: TasksService,
         private navService: NavService) {
+
+        this.dataSource = new MatTableDataSource(tasksService.tasks);
     }
 
     ngOnInit() {
@@ -25,6 +32,7 @@ export class TasksComponent implements OnInit, OnDestroy {
             this.setView(message);
         });
         this.adaptiveSize();
+        this.dataSource.sort = this.sort;
     }
 
     setView(view: string) {

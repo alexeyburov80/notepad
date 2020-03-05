@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
+import {Injectable, ViewChild} from '@angular/core';
 import {CriticalityType, EstimationType, StateType, TasksDataInterface} from './tasks-data-interface';
-import {MatDialog, MatTableDataSource} from '@angular/material';
+import {MatDialog, MatSort, MatTableDataSource} from '@angular/material';
 import {PopupEditTasksComponent} from './popup-edit-tasks/popup-edit-tasks.component';
 import {HttpService} from '../../services/http.service';
 
@@ -12,21 +12,17 @@ export class TasksService {
     public dataSource: MatTableDataSource<TasksDataInterface>;
     private taskList: TasksDataInterface[] = [];
     private currentTask: TasksDataInterface;
+    public tasks: TasksDataInterface[];
+
 
     constructor(public dialog: MatDialog,
                 private http: HttpService) {
 
-        // this.http.getTasks().subscribe(
-        //     // tslint:disable-next-line:no-shadowed-variable
-        //     tasks => {
-        //         console.log(tasks);
-        //     }
-        // );
-
         this.initList();
+        this.tasks = Array.from({length: this.taskList.length}, (_, k) => this.taskList[k]);
 
-        const tasks = Array.from({length: this.taskList.length}, (_, k) => this.taskList[k]);
-        this.dataSource = new MatTableDataSource(tasks);
+        // this.dataSource = new MatTableDataSource(this.tasks);
+        // this.dataSource.sort = this.sort;
     }
 
     aliases = [
