@@ -3,7 +3,7 @@
         <mat-form-field>
             <input matInput (keyup)="tasksService.applyFilter($event.target.value)" placeholder="Filter">
         </mat-form-field>
-        <button mat-button (click)="tasksService.createTask()">Create new task</button>
+
         <div class="mat-elevation-z8">
             <table mat-table [dataSource]="tasksService.dataSource" matSort>
                 <ng-container *ngFor="let l of tasksService.aliases" matColumnDef='{{l.eng}}'>
@@ -23,6 +23,7 @@
                 </tr>
             </table>
             <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            <button mat-button color="primary" (click)="tasksService.createTask()">Create new task</button>
         </div>
     </div>
     <div *ngIf="view === 'gantt'">
